@@ -7554,7 +7554,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">TOTAL_MISSIONARIES</span> <span class="o">=</span> <span class="mi">3</span>
@@ -7577,7 +7577,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'left': (3, 3), 'right': (0, 0), 'boat': 'left'}</pre>
 </div>
@@ -7600,7 +7600,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_valid</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
@@ -7638,7 +7638,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">possible_moves</span><span class="p">():</span>
@@ -7662,7 +7662,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">possible_moves</span><span class="p">()</span>
@@ -7676,14 +7676,292 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>[(0, 1), (0, 2), (1, 0), (1, 1), (2, 0)]</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=09555b3c-f0de-4c60-b034-6bcd0d443496">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24363c49-306b-4f3d-a74d-fbe147a62e3d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Com isso, podemos finalmente criar a função que aplica os movimentos:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bfcd32ff-01bf-43d6-a1a6-7bbd506a5eb7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">apply_move</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">move</span><span class="p">):</span>
+    <span class="n">missionaries</span><span class="p">,</span> <span class="n">cannibals</span> <span class="o">=</span> <span class="n">move</span>
+    <span class="n">left_missionaries</span><span class="p">,</span> <span class="n">left_cannibals</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"left"</span><span class="p">]</span>
+    <span class="n">right_missionaries</span><span class="p">,</span> <span class="n">right_cannibals</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">"right"</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">"boat"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"left"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"left"</span><span class="p">:</span> <span class="p">(</span><span class="n">left_missionaries</span> <span class="o">-</span> <span class="n">missionaries</span><span class="p">,</span> <span class="n">left_cannibals</span> <span class="o">-</span> <span class="n">cannibals</span><span class="p">),</span>
+            <span class="s2">"right"</span><span class="p">:</span> <span class="p">(</span><span class="n">right_missionaries</span> <span class="o">+</span> <span class="n">missionaries</span><span class="p">,</span> <span class="n">right_cannibals</span> <span class="o">+</span> <span class="n">cannibals</span><span class="p">),</span>
+            <span class="s2">"boat"</span><span class="p">:</span> <span class="s2">"right"</span>
+        <span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"left"</span><span class="p">:</span> <span class="p">(</span><span class="n">left_missionaries</span> <span class="o">+</span> <span class="n">missionaries</span><span class="p">,</span> <span class="n">left_cannibals</span> <span class="o">+</span> <span class="n">cannibals</span><span class="p">),</span>
+            <span class="s2">"right"</span><span class="p">:</span> <span class="p">(</span><span class="n">right_missionaries</span> <span class="o">-</span> <span class="n">missionaries</span><span class="p">,</span> <span class="n">right_cannibals</span> <span class="o">-</span> <span class="n">cannibals</span><span class="p">),</span>
+            <span class="s2">"boat"</span><span class="p">:</span> <span class="s2">"left"</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e826982d-981a-46f4-9200-500f499d8916">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Test</span>
+<span class="n">new_state</span> <span class="o">=</span> <span class="n">apply_move</span><span class="p">(</span><span class="n">initial_state</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_state</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Válido?"</span><span class="p">,</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">new_state</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>{'left': (2, 2), 'right': (1, 1), 'boat': 'right'}
+Válido? True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b93228f1-f6a6-4404-951b-54e29f86bcd0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>[INSERIR EXPLICAÇÃO DE FUNÇÃO SUCESSOR]</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5e9c6a42-da79-4f84-9095-7f81741d7544">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">successors</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">possible_moves</span><span class="p">():</span>
+        <span class="n">new_state</span> <span class="o">=</span> <span class="n">apply_move</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">move</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">new_state</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">move</span><span class="p">,</span> <span class="n">new_state</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=44aed9ae-aa53-4f5e-baf4-229175250cb3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_goal</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">state</span><span class="p">[</span><span class="s2">"left"</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d71c443-f251-4179-8443-fe1b6f45e100">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BFS---Busca-em-Largura">BFS - Busca em Largura<a class="anchor-link" href="#BFS---Busca-em-Largura">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15dafc64-ed1d-4bf3-87bb-11b05d0f7359">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">solve_bfs</span><span class="p">(</span><span class="n">initial_state</span><span class="p">):</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([{</span>
+        <span class="s2">"state"</span><span class="p">:</span> <span class="n">initial_state</span><span class="p">,</span>
+        <span class="s2">"path"</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">"movements"</span><span class="p">:</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="p">}])</span>
+
+    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">(</span>
+            <span class="n">initial_state</span><span class="p">[</span><span class="s2">"left"</span><span class="p">],</span>
+            <span class="n">initial_state</span><span class="p">[</span><span class="s2">"right"</span><span class="p">],</span>
+            <span class="n">initial_state</span><span class="p">[</span><span class="s2">"boat"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+
+        <span class="n">state</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s2">"state"</span><span class="p">]</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s2">"path"</span><span class="p">]</span>
+        <span class="n">movements</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="s2">"movements"</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">is_goal</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">state</span><span class="p">],</span> <span class="n">movements</span>
+
+        <span class="c1">#obtem uma lista de movimentos e estados que esses movimentos geram</span>
+        <span class="k">for</span> <span class="n">move</span><span class="p">,</span> <span class="n">new_state</span> <span class="ow">in</span> <span class="n">successors</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+            <span class="n">state_key</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">new_state</span><span class="p">[</span><span class="s2">"left"</span><span class="p">],</span>
+                <span class="n">new_state</span><span class="p">[</span><span class="s2">"right"</span><span class="p">],</span>
+                <span class="n">new_state</span><span class="p">[</span><span class="s2">"boat"</span><span class="p">]</span>
+            <span class="p">)</span>
+
+            <span class="c1"># verifica se o estado analisado é um estado que nunca foi visitado, </span>
+            <span class="c1"># se não for, esse estado é adicionado na fila pra processamento futuro</span>
+            <span class="k">if</span> <span class="n">state_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">state_key</span><span class="p">)</span>
+
+                <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s2">"state"</span><span class="p">:</span> <span class="n">new_state</span><span class="p">,</span>
+                    <span class="s2">"path"</span><span class="p">:</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">state</span><span class="p">],</span>
+                    <span class="s2">"movements"</span><span class="p">:</span> <span class="n">movements</span> <span class="o">+</span> <span class="p">[</span><span class="n">move</span><span class="p">]</span>
+                <span class="p">})</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ff1cf97b-92e5-4a11-8639-a653ecc2e28b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solution</span><span class="p">,</span> <span class="n">movements</span> <span class="o">=</span> <span class="n">solve_bfs</span><span class="p">(</span><span class="n">initial_state</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">solution</span> <span class="ow">and</span> <span class="n">movements</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">move</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">solution</span><span class="p">,</span> <span class="n">movements</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Passo </span><span class="si">{</span><span class="n">step</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="s2">"através de"</span><span class="p">,</span> <span class="n">move</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Chegamos"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Nenhuma solução encontrada"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Passo 0
+{'left': (3, 3), 'right': (0, 0), 'boat': 'left'} através de (0, 0)
+------------------------------
+Passo 1
+{'left': (3, 1), 'right': (0, 2), 'boat': 'right'} através de (0, 2)
+------------------------------
+Passo 2
+{'left': (3, 2), 'right': (0, 1), 'boat': 'left'} através de (0, 1)
+------------------------------
+Passo 3
+{'left': (3, 0), 'right': (0, 3), 'boat': 'right'} através de (0, 2)
+------------------------------
+Passo 4
+{'left': (3, 1), 'right': (0, 2), 'boat': 'left'} através de (0, 1)
+------------------------------
+Passo 5
+{'left': (1, 1), 'right': (2, 2), 'boat': 'right'} através de (2, 0)
+------------------------------
+Passo 6
+{'left': (2, 2), 'right': (1, 1), 'boat': 'left'} através de (1, 1)
+------------------------------
+Passo 7
+{'left': (0, 2), 'right': (3, 1), 'boat': 'right'} através de (2, 0)
+------------------------------
+Passo 8
+{'left': (0, 3), 'right': (3, 0), 'boat': 'left'} através de (0, 1)
+------------------------------
+Passo 9
+{'left': (0, 1), 'right': (3, 2), 'boat': 'right'} através de (0, 2)
+------------------------------
+Passo 10
+{'left': (0, 2), 'right': (3, 1), 'boat': 'left'} através de (0, 1)
+------------------------------
+Passo 11
+{'left': (0, 0), 'right': (3, 3), 'boat': 'right'} através de (0, 2)
+------------------------------
+Chegamos
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=37069df2-61fa-4e01-a579-2ad8891736de">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="TODO">TODO<a class="anchor-link" href="#TODO">¶</a></h2><ul>
+<li>Adicionar algorítmos de profundidade e profundidade limitada.</li>
+<li>Adicionar suporte de alteração de parâmetros (número de canibais, missionários, pessoas no barco).</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=334b761d-3a75-49ec-8aae-96f30b97ee52">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
